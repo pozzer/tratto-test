@@ -6,7 +6,7 @@ RSpec.describe WalletConversion, type: :model do
   let(:wallet_conversion) { WalletConversion.new() }
 
   describe ".to_usd" do
-    context "when converting an" do
+    context "when converting" do
       it "USD to USD" do
         expect(wallet_conversion.convert("USD", "USD", 2.0)).to eq 2.0
       end
