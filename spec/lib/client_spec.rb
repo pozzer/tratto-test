@@ -34,7 +34,7 @@ RSpec.describe Client, type: :model do
   end
 
   describe ".export" do
-    it "return hash with name e all wallets" do
+    it "return hash with name and all wallets" do
       expect(client.export).to eq({:name=>"jon", :wallets=>{"USD"=>50.0, "EUR"=>20.0}})
     end
   end
