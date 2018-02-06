@@ -32,12 +32,12 @@ RSpec.describe WalletCentral, type: :model do
         expect(wallet_central.output('jon')).to eq({:name=>"jon", :wallets=>{"EUR"=>868.65, "USD"=>463.39}})
       end
 
-      it "shows all clients and his wallets if client not found" do
+      it "shows all clients and their wallets if client not found" do
         expect(wallet_central.output('jons')).to eq([{:name=>"jon", :wallets=>{"EUR"=>868.65, "USD"=>463.39}}, {:name=>"arya", :wallets=>{"EUR"=>1379.78, "USD"=>0.0}}, {:name=>"sansa", :wallets=>{"EUR"=>1065.45, "BRL"=>586.28}}])
       end
     end
 
-    context "when you not send the name as a parameter" do
+    context "when name not passed as a parameter" do
       it "shows all clients and his wallets" do
         expect(wallet_central.output).to eq([{:name=>"jon", :wallets=>{"EUR"=>868.65, "USD"=>463.39}}, {:name=>"arya", :wallets=>{"EUR"=>1379.78, "USD"=>0.0}}, {:name=>"sansa", :wallets=>{"EUR"=>1065.45, "BRL"=>586.28}}])
       end
