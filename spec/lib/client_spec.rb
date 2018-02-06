@@ -21,7 +21,7 @@ RSpec.describe Client, type: :model do
 
   describe ".find_possiblie_wallet" do
     context "IF not having Wallet BRD" do
-      it "return first findend wallet for client" do
+      it "return first wallet for client" do
         expect(client.find_possiblie_wallet("BRD").class).to eq Wallet
       end
 
