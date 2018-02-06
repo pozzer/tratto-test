@@ -6,11 +6,11 @@ RSpec.describe Wallet, type: :model do
   let(:wallet_2) { Wallet.new("BRD", 50.0) }
 
   describe ".value_avaiable?" do
-    it "return true if há o valor na carteira" do
+    it "return true if has the correct value in the wallet" do
       expect(wallet.value_avaiable?(25.0)).to eq(true)
     end
 
-    it "return expection if not há saldo na carteira" do
+    it "return expection if wallet has insufficient funds" do
       expect { wallet.value_avaiable?(75.0) }.to raise_error("Insufficient funds")
     end
   end
